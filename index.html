@@ -10,89 +10,57 @@
 
 </head>
 
-<body>
+<body class="max-w-screen-2xl mx-auto">
     <header class="p-5 mt-3">
         <!-- navigation -->
-        <!-- <nav class="navbar navbar-expand-lg border-bottom pb-4">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <h3><span class="bg-success text-white p-2 rounded">Tortaza</span> <span class="text-success">
-                            Khobor</span>
-                    </h3>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active text-success" aria-current="page" href="#">News</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <img class="rounded-circle" src="svg/pp.svg" alt="pic">
-                        </li>
-
-                    </ul>
-
+        <section>
+            <div class="navbar bg-base-100 border-b-2 p-4">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <label tabindex="0" class="btn btn-ghost sm:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </label>
+                        <ul tabindex="0"
+                            class="menu menu-compact dropdown-content  mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a>Item 1</a></li>
+                            <li><a>Item 3</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost normal-case text-xl"><span
+                            class="bg-indigo-500 text-white p-2 rounded mr-1">Tortaza
+                        </span> <span class="text-indigo-500">
+                            Khobor</span></a>
                 </div>
-            </div>
-        </nav> -->
-        <!-- <div class="navbar bg-base-100 border-b-2">
-            <div class="flex-1">
-                <a class="btn btn-ghost normal-case text-xl">
-                    <h6><span class="bg-indigo-500 text-white p-1 rounded">Tortaza</span> <span class="text-indigo-500">
-                            Khobor</span>
-                    </h6>
-                </a>
-            </div>
-            <div class="flex-none">
-                <ul class="menu menu-horizontal p-0">
-                    <li class="active text-indigo-500"><a>News</a></li>
-
-                    <li class=""><a>Blog</a></li>
-                    <li><img src="svg/pp.svg" alt=""></li>
-                </ul>
-            </div>
-        </div> -->
-
-        <div class="navbar bg-base-100 border-b-2 p-2 p-4">
-            <div class="navbar-start">
-                <div class="dropdown">
-                    <label tabindex="0" class="btn btn-ghost sm:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
-                    </label>
-                    <ul tabindex="0"
-                        class="menu menu-compact dropdown-content  mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Item 1</a></li>
-                        <li><a>Item 3</a></li>
+                <div class="navbar-end hidden sm:inline-block sm:flex">
+                    <ul class="menu menu-horizontal p-0">
+                        <li class="active"><a class="text-indigo-500"> <span
+                                    class="border-b-2 border-indigo-500">News</span> </a></li>
+                        <li><a class=""><span class=" ">Blog</span> </a></li>
+                        <li><img src="svg/pp.svg" alt=""></li>
                     </ul>
                 </div>
-                <a class="btn btn-ghost normal-case text-xl"><span
-                        class="bg-indigo-500 text-white p-2 rounded mr-1">Tortaza
-                    </span> <span class="text-indigo-500">
-                        Khobor</span></a>
-            </div>
-            <div class="navbar-end hidden sm:inline-block sm:flex">
-                <ul class="menu menu-horizontal p-0">
-                    <li class="active"><a class="text-indigo-500"> <span
-                                class="border-b-2 border-indigo-500">News</span> </a></li>
-                    <li><a class=""><span class=" ">Blog</span> </a></li>
-                    <li><img src="svg/pp.svg" alt=""></li>
-                </ul>
-            </div>
 
-        </div>
+            </div>
+        </section>
+
+        <!-- catagories section -->
+        <section id="catergories-section" class="mt-4 flex justify-between p-4 mx-4">
+            <!-- will add element from js dynamically -->
+        </section>
+
+        <!-- no_news/news found section -->
+        <section class="p-4 mx-4">
+            <div class="h-10 bg-white border rounded w-100 ">
+                <p id="news-found" class="p-2"></p>
+            </div>
+        </section>
     </header>
 
+    <script src="JS/categories.js"></script>
 </body>
 
 </html>
