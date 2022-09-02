@@ -5,9 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tortaja Khobor</title>
+    <!-- daisyUi -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/b07a508bf3.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="max-w-screen-2xl mx-auto">
@@ -60,6 +62,32 @@
         </section>
     </header>
 
+    <!-- main -->
+    <main class="px-9 mx-4">
+        <!-- default sort section-->
+        <section class="flex justify-between">
+            <div>
+                <p>Sort By View: <select class="select w-50 rounded max-w-xsml-2" disabled>
+                        <option class="bg-white disabled">Default</option>
+                    </select>
+                </p>
+            </div>
+            <div>
+                <button class="btn bg-indigo-500 rounded mx-1 text-white">Today's Pick</button>
+                <button class="btn btn-ghost rounded border border-indigo-500">Trending</button>
+            </div>
+        </section>
+
+        <!-- news section -->
+        <section id="news-section" class="mt-16 pb-8">
+            <!-- will load dynamically from js -->
+        </section>
+
+        <!-- modal -->
+
+    </main>
+
+    <script src="JS/displayNews.js"></script>
     <script src="JS/categories.js"></script>
 </body>
 

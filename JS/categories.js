@@ -1,3 +1,4 @@
+// loading all categories
 const loadCatergories = async () => {
     const url = 'https://openapi.programming-hero.com/api/news/categories'
     try {
@@ -19,20 +20,15 @@ const displayCatergory = categories => {
         const div = document.createElement('div');
         div.classList.add('tabs');
         div.innerHTML = `
-         <button class="tab-sm" onclick="categoryNews('${category.category_id}','${category.category_name}')"> ${category.category_name} </button>
+         <button class="tab-sm" onclick="loadNews('${category.category_id}','${category.category_name}')"> ${category.category_name} </button>
     `
         categoriesSection.appendChild(div);
     });
 }
 
-const categoryNews = (id, cName) => {
+// loading news from category after clicking 
+const loadNews = async (id, cName) => {
     const url = `https://openapi.programming-hero.com/api/news/category/${id}`
-    console.log(url);
-    loadNews(url, cName);
-}
-
-const loadNews = async (urlId, cName) => {
-    const url = urlId;
     try {
         const res = await fetch(url);
         const data = await res.json();
@@ -44,14 +40,14 @@ const loadNews = async (urlId, cName) => {
 }
 
 // display news from specific categories
-const displayNews = (news, cName) => {
-    const newsFound = document.getElementById('news-found');
+// const displayNews = (news, cName) => {
+//     const newsFound = document.getElementById('news-found');
 
-    if (news.length === 0) {
-        newsFound.innerText = `No News Found!`
-    }
-    else {
-        newsFound.innerText = `${news.length} items for category ${cName}`
-    }
-}
+//     if (news.length === 0) {
+//         newsFound.innerText = `No News Found!`
+//     }
+//     else {
+//         newsFound.innerText = `${news.length} items for category ${cName}`
+//     }
+// }
 loadCatergories();
