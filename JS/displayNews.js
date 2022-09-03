@@ -15,8 +15,8 @@ const displayNews = (news, cName) => {
     // adding html for news dynamically
     news.forEach(element => {
         const ratings = element.rating.number;
-        console.log('rating:', ratings);
         const div = document.createElement('div');
+
         div.innerHTML = `
         <div class="card lg:card-side bg-base-100 shadow-xl bg-white mb-4 " onclick="loadModal('${element._id}')">
         <figure class="w-full"><img class="rounded w-full h-full" src="${element.image_url}" alt="Album"></figure>
@@ -57,7 +57,7 @@ const displayNews = (news, cName) => {
     spinnerSection.classList.add('hidden');
 }
 
-// setting rating function based on api
+// setting rating based on api
 const setRating = (ratings, num) => {
     let str = `<i class="fa-solid fa-star"></i> `;
     let star = '';
@@ -73,7 +73,7 @@ const setRating = (ratings, num) => {
     return star;
 }
 
-// opening modal to show details
+//  modal to show details
 const loadModal = newsId => {
     const url = `https://openapi.programming-hero.com/api/news/${newsId}`
     fetch(url)

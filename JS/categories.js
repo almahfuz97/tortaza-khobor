@@ -4,9 +4,6 @@ const loadCatergories = async () => {
     try {
         const res = await fetch(url);
         const data = await res.json();
-        console.log(data.data);
-        // console.log(data.data.news_category[0].category_id);
-
         displayCatergory(data.data.news_category);
     }
     catch (err) {
@@ -41,7 +38,7 @@ const loadNews = async (id, cName) => {
     // spinner
     spinnerSection.classList.remove('hidden');
 
-    // const categoriesSection = document.getElementById('catergories-section');
+    // link to catergory section
     location.href = "#catergories-section"
 
     // changing catergory text color after clicking
