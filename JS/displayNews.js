@@ -10,6 +10,7 @@ const displayNews = (news, cName) => {
         newsFound.innerText = `${news.length} items for category ${cName}`
     }
     newsSection.textContent = '';
+    // adding html for news dynamically
     news.forEach(element => {
         const div = document.createElement('div');
         div.innerHTML = `
@@ -29,7 +30,7 @@ const displayNews = (news, cName) => {
                     </div>
                 </div>
                 <div>
-                    <i class="fa-regular fa-eye mr-2"></i> <span class="font-bold">${element.total_view ? element.total_view : "No Data Found"}</span>
+                    <i class="fa-regular fa-eye "></i> <span class="font-bold">${element.total_view ? element.total_view : "No Data Found"}</span>
                 </div>
                 <div>
                     <i class="fa-solid fa-star"></i>
@@ -39,7 +40,8 @@ const displayNews = (news, cName) => {
                     <i class="fa-regular fa-star"></i>
                 </div>
                 <div>
-                    <span><i class="fa-solid fa-arrow-right text-indigo-500"></i></span>
+                    <span><label for="my-modal-6" class=" modal-button"><i class="fa-solid fa-arrow-right text-white ml-2 bg-indigo-500 rounded-full p-2"></i></span>
+                    </label>
                 </div>
             </div>
             
@@ -49,6 +51,7 @@ const displayNews = (news, cName) => {
         `;
         newsSection.appendChild(div);
     });
+    spinnerSection.classList.add('hidden');
 }
 
 // opening modal to show details
@@ -62,4 +65,20 @@ const loadModal = newsId => {
 
 const openModal = data => {
     console.log(data);
+    const authorPic = document.getElementById('modal-author-pic');
+    const authorName = document.getElementById('modal-author-name');
+    const modalNewsDate = document.getElementById('modal-news-date');
+    const modalViews = document.getElementById('modal-views');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDetails = document.getElementById('modal-details');
+
+    data.forEach(element => {
+        authorPic.setAttribute('src', `${element.author.img ? element.author.img : ""}`)
+        authorName.innerText = element.author.name ? element.author.name : "No name found!";
+        modalNewsDate.innerText = element.author.published_date ? element.author.published_date.slice(0, 10) : "No Date found!";
+        modalViews.innerText = element.total_view ? element.total_view : "No Data Found!";
+        modalTitle.innerText = element.title ? element.title : "no data found";
+        modalDetails.innerText = element.details ? element.details : "no data found!";
+    })
+
 }
