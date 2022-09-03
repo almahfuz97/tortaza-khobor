@@ -4,6 +4,9 @@ const loadCatergories = async () => {
     try {
         const res = await fetch(url);
         const data = await res.json();
+        console.log(data.data);
+        // console.log(data.data.news_category[0].category_id);
+
         displayCatergory(data.data.news_category);
     }
     catch (err) {
@@ -24,6 +27,11 @@ const displayCatergory = categories => {
     `
         categoriesSection.appendChild(div);
     });
+
+    // loading default news onload()
+    // spinner
+    spinnerSection.classList.add('hidden');
+    loadNews(categories[0].category_id, categories[0].category_name);
 }
 
 // loading news from category after clicking 
@@ -50,6 +58,7 @@ const loadNews = async (id, cName) => {
         // sorting array of objects decreasing order
         data.data.sort((a, b) => b.total_view - a.total_view);
 
+        // calling displayNews function in displayNews.js file
         displayNews(data.data, cName);
     } catch (error) {
         console.log(error)

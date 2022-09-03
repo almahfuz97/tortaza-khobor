@@ -30,7 +30,7 @@
                             class="menu menu-compact dropdown-content  mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><a href="index.html">News</a></li>
                             <li><a href="#">Blog</a></li>
-                            <li><img src="svg/pp.svg" alt=""></li>
+                            <li><img class="w-14 h-14 p-3 rounded" src="svg/pp2.png" alt=""></li>
                         </ul>
                     </div>
                     <a class="btn btn-ghost hover:bg-white normal-case text-xl"><span
@@ -50,7 +50,7 @@
                                 <span id="blog-span2" class="border-b-2 border-indigo-500 ">Blog</span>
                             </a>
                         </li>
-                        <li><img src="svg/pp.svg" alt=""></li>
+                        <li><img class="w-14 h-14 p-3 rounded-full" src="svg/pp2.png" alt=""></li>
                     </ul>
                 </div>
 
@@ -66,67 +66,90 @@
                     <span class="border-b-2 p-2"> Question And Answer</span>
                 </h1>
             </div>
-            <div class="mt-8 text-center bg-indigo-500 mx-20 rounded">
+            <div class="mt-8 text-center">
                 <div class="flex flex-col justify-center items-center p-5">
-                    <h3 class="text-white justify-center">What is the difference between var, let, and const in
-                        javascript?
-                    </h3>
-                    <p class="mt-5 text-white">
-                        var variables can be updated and re-declared within its scope; let variables can be updated but
-                        not re-declared; const variables can neither be updated nor re-declared. They are all hoisted to
-                        the top of their scope. But while var variables are initialized with undefined , let and const
-                        variables are not initialized.
-                    </p>
+                    <div class="bg-indigo-500  p-4 rounded rounded-b-none mx-20 w-3/4">
+                        <h3 class="text-white justify-center">What is the difference between var, let, and const in
+                            javascript?
+                        </h3>
+                    </div>
+                    <div class="text-center bg-white mx-20 rounded p-3 rounded-t-none w-3/4 shadow-lg">
+                        <p class="text-start text-indigo-500 tracking-wide	font-xs"> <span
+                                class="text-orange-500 font-semibold">
+                                Answer:</span>
+                            var variables can be updated and re-declared within its scope; let variables can be updated
+                            but
+                            not re-declared; const variables can neither be updated nor re-declared. They are all
+                            hoisted to
+                            the top of their scope. But while var variables are initialized with undefined , let and
+                            const
+                            variables are not initialized.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <div class="flex flex-col justify-center items-center p-5">
+                    <div class="bg-indigo-500  p-4 rounded rounded-b-none mx-20 w-3/4">
+                        <h3 class="text-white justify-center">What is the difference between regular function and arrow
+                            function in javascript?
+                        </h3>
+                    </div>
+                    <div class="text-center bg-white mx-20 rounded p-3 rounded-t-none w-3/4 shadow-lg">
+                        <p class="text-start text-indigo-500 tracking-wide	font-xs"> <span
+                                class="text-orange-500 font-semibold">
+                                Answer:</span>
+                            In regular JavaScript functions, arguments keywords can be used to access the passed
+                            arguments
+                            when the function is invoked. But, arrow functions do not have their own arguments and it
+                            uses
+                            the arguments from the outer function
+                        </p>
+                    </div>
                 </div>
 
                 <div></div>
                 <div></div>
             </div>
-            <div class="mt-8 text-center bg-indigo-500 mx-20 rounded">
+            <div class="mt-8 text-center">
                 <div class="flex flex-col justify-center items-center p-5">
-                    <h3 class="text-white justify-center">What is the difference between regular function and arrow
-                        function in javascript?
-                    </h3>
-                    <p class="mt-5 text-white">
-                        In regular JavaScript functions, arguments keywords can be used to access the passed arguments
-                        when the function is invoked. But, arrow functions do not have their own arguments and it uses
-                        the arguments from the outer function
-                    </p>
+                    <div class="bg-indigo-500  p-4 rounded rounded-b-none mx-20 w-3/4">
+                        <h3 class="text-white justify-center">What is the difference between map, foreach, find, and
+                            filter
+                            in
+                            javascript?
+                        </h3>
+                    </div>
+                    <div class="text-center bg-white mx-20 rounded p-3 rounded-t-none w-3/4 shadow-lg">
+                        <p class="text-start text-indigo-500 tracking-wide	font-xs"> <span
+                                class="text-orange-500 font-semibold">
+                                Answer:</span>
+                            The main difference between this two methods is that forEach allows you to change elements
+                            of
+                            original array and returns undefined and map does not allow you to change original array and
+                            intended for making new array based on original one.
+                        </p>
+                    </div>
                 </div>
-
-                <div></div>
-                <div></div>
             </div>
-            <div class="mt-8 text-center bg-indigo-500 mx-20 rounded">
+            <div class="mt-8 text-center">
                 <div class="flex flex-col justify-center items-center p-5">
-                    <h3 class="text-white justify-center">What is the difference between map, foreach, find, and filter
-                        in
-                        javascript?
-                    </h3>
-                    <p class="mt-5 text-white">
-                        The main difference between this two methods is that forEach allows you to change elements of
-                        original array and returns undefined and map does not allow you to change original array and
-                        intended for making new array based on original one.
-                    </p>
+                    <div class="bg-indigo-500  p-4 rounded rounded-b-none mx-20 w-3/4">
+                        <h3 class="text-white justify-center">What is template string?
+                        </h3>
+                    </div>
+                    <div class="text-center bg-white mx-20 rounded p-3 rounded-t-none w-3/4 shadow-lg">
+                        <p class="text-start text-indigo-500 tracking-wide	font-xs"> <span
+                                class="text-orange-500 font-semibold">
+                                Answer:</span>
+                            Template strings are a powerful feature of modern JavaScript released in ES6. It lets us
+                            insert/interpolate variables and expressions into strings without needing to concatenate
+                            like in
+                            older versions of JavaScript. It allows us to create strings that are complex and contain
+                            dynamic elements
+                        </p>
+                    </div>
                 </div>
-
-                <div></div>
-                <div></div>
-            </div>
-            <div class="mt-8 text-center bg-indigo-500 mx-20 rounded">
-                <div class="flex flex-col justify-center items-center p-5">
-                    <h3 class="text-white justify-center">What is template string?
-                    </h3>
-                    <p class="mt-5 text-white">
-                        Template strings are a powerful feature of modern JavaScript released in ES6. It lets us
-                        insert/interpolate variables and expressions into strings without needing to concatenate like in
-                        older versions of JavaScript. It allows us to create strings that are complex and contain
-                        dynamic elements
-                    </p>
-                </div>
-
-                <div></div>
-                <div></div>
             </div>
         </section>
     </main>
