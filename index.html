@@ -12,50 +12,11 @@
     <script src="https://kit.fontawesome.com/b07a508bf3.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="max-w-screen-2xl mx-auto">
+<body class="max-w-screen-2xl mx-auto " onload="changeColor(1)">
     <header class="p-5 mt-3">
         <!-- navigation -->
-        <section>
-            <div class="navbar bg-base-100 border-b-2 p-4">
-                <div class="navbar-start">
-                    <div class="dropdown">
-                        <label tabindex="0" class="btn btn-ghost sm:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 6h16M4 12h8m-8 6h16" />
-                            </svg>
-                        </label>
-                        <ul tabindex="0"
-                            class="menu menu-compact dropdown-content  mt-3 p-2 shadow bg-base-100 rounded-box w-52 flex flex-col items-center">
-                            <li><img class="w-14 h-14 p-3 rounded" src="svg/pp2.png" alt=""></li>
-                            <li><a>News</a></li>
-                            <li><a class="" href="blog.html"><span class=" ">Blog</span> </a></li>
-
-                        </ul>
-                    </div>
-                    <a class="btn btn-ghost hover:bg-white normal-case text-xl"><span
-                            class="bg-indigo-500 text-white p-2 rounded mr-1">Tortaza
-                        </span> <span class="text-indigo-500">
-                            Khobor</span></a>
-                </div>
-                <div class="navbar-end hidden sm:inline-block sm:flex">
-                    <ul class="menu menu-horizontal p-0">
-                        <li class="active">
-                            <a id="news-anchor" href="#" class="text-indigo-500">
-                                <span id="news-span" class="border-b-2 border-indigo-500">News</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a id="blog-anchor" class=" " href="blog.html">
-                                <span id="blog-span" class=" ">Blog</span>
-                            </a>
-                        </li>
-                        <li><img class="w-14 h-14 p-3 rounded" src="svg/pp2.png" alt=""></li>
-                    </ul>
-                </div>
-
-            </div>
+        <section id="nav-section">
+            <!-- navbar will be loaded from loadingNavbar.js -->
         </section>
 
         <!-- catagories section -->
@@ -133,6 +94,7 @@
         </div>
 
     </main>
+    <script src="JS/loadingNavbar.js"></script>
     <script src="JS/blog.js"></script>
     <script src="JS/displayNews.js"></script>
     <script src="JS/categories.js"></script>
