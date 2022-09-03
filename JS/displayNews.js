@@ -74,6 +74,7 @@ const openModal = data => {
     const modalViews = document.getElementById('modal-views');
     const modalTitle = document.getElementById('modal-title');
     const modalDetails = document.getElementById('modal-details');
+    const modalThumbnail = document.getElementById('modal-thumbnail');
 
     data.forEach(element => {
         authorPic.setAttribute('src', `${element.author.img ? element.author.img : ""}`)
@@ -82,6 +83,7 @@ const openModal = data => {
         modalViews.innerText = element.total_view ? element.total_view : "No Data Found!";
         modalTitle.innerText = element.title ? element.title : "no data found";
         modalDetails.innerText = element.details ? element.details : "no data found!";
+        modalThumbnail.setAttribute('src', `${element.image_url}`)
     })
 
 }
