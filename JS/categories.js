@@ -41,6 +41,9 @@ const loadNews = async (id, cName) => {
     // spinner
     spinnerSection.classList.remove('hidden');
 
+    // const categoriesSection = document.getElementById('catergories-section');
+    location.href = "#catergories-section"
+
     // changing catergory text color after clicking
     const divId = document.getElementById(id);
     const allDivs = document.getElementsByClassName('tabs');
