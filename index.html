@@ -28,20 +28,28 @@
                         </label>
                         <ul tabindex="0"
                             class="menu menu-compact dropdown-content  mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a>Item 1</a></li>
-                            <li><a>Item 3</a></li>
+                            <li><a>News</a></li>
+                            <li><a class="" href="blog.html"><span class=" ">Blog</span> </a></li>
+                            <li><img src="svg/pp.svg" alt=""></li>
                         </ul>
                     </div>
-                    <a class="btn btn-ghost normal-case text-xl"><span
+                    <a class="btn btn-ghost hover:bg-white normal-case text-xl"><span
                             class="bg-indigo-500 text-white p-2 rounded mr-1">Tortaza
                         </span> <span class="text-indigo-500">
                             Khobor</span></a>
                 </div>
                 <div class="navbar-end hidden sm:inline-block sm:flex">
                     <ul class="menu menu-horizontal p-0">
-                        <li class="active"><a class="text-indigo-500"> <span
-                                    class="border-b-2 border-indigo-500">News</span> </a></li>
-                        <li><a class=""><span class=" ">Blog</span> </a></li>
+                        <li class="active">
+                            <a id="news-anchor" href="#" class="text-indigo-500">
+                                <span id="news-span" class="border-b-2 border-indigo-500">News</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="blog-anchor" class=" " href="blog.html">
+                                <span id="blog-span" class=" ">Blog</span>
+                            </a>
+                        </li>
                         <li><img src="svg/pp.svg" alt=""></li>
                     </ul>
                 </div>
@@ -124,7 +132,7 @@
         </div>
 
     </main>
-
+    <script src="JS/blog.js"></script>
     <script src="JS/displayNews.js"></script>
     <script src="JS/categories.js"></script>
 </body>
