@@ -14,6 +14,8 @@ const displayNews = (news, cName) => {
     newsSection.textContent = '';
     // adding html for news dynamically
     news.forEach(element => {
+        const ratings = element.rating.number;
+        console.log('rating:', ratings);
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="card lg:card-side bg-base-100 shadow-xl bg-white mb-4 " onclick="loadModal('${element._id}')">
@@ -35,11 +37,8 @@ const displayNews = (news, cName) => {
                     <i class="fa-regular fa-eye "></i> <span class="font-bold">${element.total_view ? element.total_view : "No Data Found"}</span>
                 </div>
                 <div class="hidden md:block">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
+                    ${setRating(parseInt(ratings), ratings % 2 === 0 ? 0 : 1)}
+                   
                 </div>
                 <div>
                     <span><label for="my-modal-6" class=" modal-button"><i class="fa-solid fa-arrow-right text-white ml-2 bg-indigo-500 rounded-full p-2"></i></span>
@@ -58,16 +57,33 @@ const displayNews = (news, cName) => {
     spinnerSection.classList.add('hidden');
 }
 
+// setting rating function based on api
+const setRating = (ratings, num) => {
+    let str = `<i class="fa-solid fa-star"></i> `;
+    let star = '';
+    let halfStar = `<i class="fa-solid fa-star-half-stroke"></i>`
+    console.log(ratings);
+
+    for (let i = 0; i < ratings; i++) {
+        star = star + str;
+    }
+    if (num === 1) {
+        star = star + halfStar;
+    }
+    return star;
+}
+
 // opening modal to show details
 const loadModal = newsId => {
     const url = `https://openapi.programming-hero.com/api/news/${newsId}`
     fetch(url)
         .then(res => res.json())
-        .then(data => openModal(data.data))
+        .then(data => setModal(data.data))
         .catch(err => console.log(err))
 }
 
-const openModal = data => {
+// setting modal info
+const setModal = data => {
     const authorPic = document.getElementById('modal-author-pic');
     const authorName = document.getElementById('modal-author-name');
     const modalNewsDate = document.getElementById('modal-news-date');
@@ -75,6 +91,7 @@ const openModal = data => {
     const modalTitle = document.getElementById('modal-title');
     const modalDetails = document.getElementById('modal-details');
     const modalThumbnail = document.getElementById('modal-thumbnail');
+    const modalRatings = document.getElementById('modal-ratings');
 
     data.forEach(element => {
         authorPic.setAttribute('src', `${element.author.img ? element.author.img : ""}`)
@@ -84,6 +101,11 @@ const openModal = data => {
         modalTitle.innerText = element.title ? element.title : "no data found";
         modalDetails.innerText = element.details ? element.details : "no data found!";
         modalThumbnail.setAttribute('src', `${element.image_url}`)
+
+        // modal ratings from api
+        modalRatings.innerHTML = ` 
+        ${setRating(parseInt(element.rating.number), element.rating.number % 2 === 0 ? 0 : 1)}
+        `
     })
 
 }
