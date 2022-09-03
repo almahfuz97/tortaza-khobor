@@ -65,7 +65,15 @@
                             arguments
                             when the function is invoked. But, arrow functions do not have their own arguments and it
                             uses
-                            the arguments from the outer function
+                            the arguments from the outer function.
+                            Inside of a regular JavaScript function, this value (aka the execution context) is dynamic.
+                            The dynamic context means that the value of this depends on how the function is invoked. On
+                            the other hand, The behavior of this inside of an arrow function differs considerably from
+                            the regular function's this behavior. The arrow function doesn't define its own execution
+                            context.
+                            No matter how or where being executed, this value inside of an arrow function always equals
+                            this value from the outer function. In other words, the arrow function resolves this
+                            lexically
                         </p>
                     </div>
                 </div>
@@ -86,10 +94,26 @@
                         <p class="text-start text-indigo-500 tracking-wide	font-xs"> <span
                                 class="text-orange-500 font-semibold">
                                 Answer:</span>
-                            The main difference between this two methods is that forEach allows you to change elements
-                            of
-                            original array and returns undefined and map does not allow you to change original array and
-                            intended for making new array based on original one.
+                            .forEach:
+
+                            the forEach() method is used to execute the same code on every element in an array but does
+                            not
+                            change the array and it returns undefined. <br>
+                            <br>
+                            .map(): the map() method executes the same code on every element in an array and returns a
+                            new array
+                            with the
+                            updated elements. <br>
+                            <br>
+                            .filter(): The filter() method checks every element in an array to see if it meets a certain
+                            criteria
+                            and returns
+                            a new array with the elements that return truthy for the criteria. <br>
+                            <br>
+                            find(): The find() method returns the first element in the provided array that satisfies the
+                            provided testing function. If no values satisfy the testing function, undefined is returned.
+
+
                         </p>
                     </div>
                 </div>
@@ -108,7 +132,17 @@
                             insert/interpolate variables and expressions into strings without needing to concatenate
                             like in
                             older versions of JavaScript. It allows us to create strings that are complex and contain
-                            dynamic elements
+                            dynamic elements. <br>
+                            <br>
+                            Template literals are enclosed by backtick (`) characters instead of double or single
+                            quotes.
+
+                            Along with having normal strings, template literals can also contain other parts called
+                            placeholders, which are embedded expressions delimited by a dollar sign and curly braces:
+                            ${expression}. The strings and placeholders get passed to a function — either a default
+                            function, or a function you supply. The default function (when you don't supply your own)
+                            just performs string interpolation to do substitution of the placeholders and then
+                            concatenate the parts into a single string.
                         </p>
                     </div>
                 </div>
