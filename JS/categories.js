@@ -4,7 +4,6 @@ const loadCatergories = async () => {
     try {
         const res = await fetch(url);
         const data = await res.json();
-        console.log(data.data.news_category);
         displayCatergory(data.data.news_category);
     }
     catch (err) {
@@ -33,20 +32,24 @@ const loadNews = async (id, cName) => {
     // spinner
     spinnerSection.classList.remove('hidden');
 
+    // changing catergory text color after clicking
     const divId = document.getElementById(id);
     const allDivs = document.getElementsByClassName('tabs');
-    console.log(allDivs.length);
-    console.log(allDivs);
     for (let i = 0; i < allDivs.length; i++) {
         allDivs[i].classList.remove('text-indigo-500')
     }
     divId.classList.add('text-indigo-500')
 
+    // fetching specific catergory
     const url = `https://openapi.programming-hero.com/api/news/category/${id}`
     try {
         const res = await fetch(url);
         const data = await res.json();
         console.log(data.data);
+
+        // sorting array of objects decreasing order
+        data.data.sort((a, b) => b.total_view - a.total_view);
+
         displayNews(data.data, cName);
     } catch (error) {
         console.log(error)
