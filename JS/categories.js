@@ -21,10 +21,10 @@ const displayCatergory = categories => {
     categories.forEach(category => {
         const div = document.createElement('div');
         div.setAttribute('id', `${category.category_id}`)
-        div.classList.add('tabs', 'transition', 'ease-in-out', 'delay-150', 'hover:-translate-y-0.5', 'hover:scale-110', 'hover:rounded', 'hover:text-indigo-500', 'duration-30');
+        div.classList.add('tabs', 'transition', 'ease-in-out', 'delay-150', 'hover:-translate-y-0.5', 'hover:scale-110', 'hover:rounded', 'hover:text-indigo-500', 'duration-30', 'flex', 'justify-center');
 
         div.innerHTML = `
-         <button class="tab-sm p-4 flex items-center m-1 border border-ghost rounded" onclick="loadNews('${category.category_id}','${category.category_name}')"> ${category.category_name} </button>
+         <button class="tab-sm p-4 w-1/2 md:w-full justify-center flex items-center m-1 border border-ghost drop-shadow-md rounded" onclick="loadNews('${category.category_id}','${category.category_name}')"> ${category.category_name} </button>
     `
         categoriesSection.appendChild(div);
     });
