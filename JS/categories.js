@@ -54,7 +54,6 @@ const loadNews = async (id, cName) => {
     try {
         const res = await fetch(url);
         const data = await res.json();
-        console.log(data.data);
 
         // sorting array of objects decreasing order
         data.data.sort((a, b) => b.total_view - a.total_view);

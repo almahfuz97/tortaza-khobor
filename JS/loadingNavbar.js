@@ -49,11 +49,8 @@ const loadNavbar = () => {
 loadNavbar();
 
 const changeColor = str => {
-    console.log(typeof str);
     const newsAnchor = document.getElementById('news-anchor');
     const blogAnchor = document.getElementById('blog-anchor');
-
-    console.log(newsAnchor)
     const newsSpan = document.getElementById('news-span');
     const blogSpan = document.getElementById('blog-span');
 

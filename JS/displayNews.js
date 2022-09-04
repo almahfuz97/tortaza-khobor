@@ -19,7 +19,12 @@ const displayNews = (news, cName) => {
 
         div.innerHTML = `
         <div class="card lg:card-side bg-base-100 shadow-xl bg-white mb-4 " onclick="loadModal('${element._id}')">
-        <figure><img class="rounded lg:mt-0 w-full h-60 md:h-96 lg:h-full" src="${element.thumbnail_url}" alt="Album"></figure>
+        <picture>
+            <source media="(min-width: 1024px)" srcset="${element.thumbnail_url}">
+            <img class="rounded lg:mt-0 w-full h-full" src="${element.image_url}" alt="Album">
+        </picture>
+
+
         <div class="card-body w-full">
             <h2 class="card-title">${element.title}</h2>
             <p class="opacity-50 w-full">${element.details.slice(0, 180)}</p>
@@ -62,7 +67,6 @@ const setRating = (ratings, num) => {
     let str = `<i class="fa-solid fa-star"></i> `;
     let star = '';
     let halfStar = `<i class="fa-solid fa-star-half-stroke"></i>`
-    console.log(ratings);
 
     for (let i = 0; i < ratings; i++) {
         star = star + str;
