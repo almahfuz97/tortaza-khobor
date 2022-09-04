@@ -19,11 +19,11 @@ const displayNews = (news, cName) => {
 
         div.innerHTML = `
         <div class="card lg:card-side bg-base-100 shadow-xl bg-white mb-4 " onclick="loadModal('${element._id}')">
-        <figure class="w-full"><img class="rounded w-full h-full" src="${element.image_url}" alt="Album"></figure>
+        <figure><img class="rounded lg:mt-0 w-full h-60 md:h-96 lg:h-full" src="${element.thumbnail_url}" alt="Album"></figure>
         <div class="card-body w-full">
             <h2 class="card-title">${element.title}</h2>
-            <p class="opacity-50 w-full">${element.details.slice(0, 100)}</p>
-            <p class="opacity-50 w-full">${element.details.length > 300 ? element.details.slice(100, 200).concat('...') : element.details}</p>
+            <p class="opacity-50 w-full">${element.details.slice(0, 180)}</p>
+            <p class="opacity-50 w-full">${element.details.length > 380 ? element.details.slice(180, 380).concat('...') : element.details.slice(180, element.length)}</p>
             <div class="flex justify-between mt-5">
                  <div class="flex justify-between items-center">
                     <img class="w-10 h-10 mr-2 rounded-full" src="${element.author.img ? element.author.img : ""}" alt="">
